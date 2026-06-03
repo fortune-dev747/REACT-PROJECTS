@@ -52,7 +52,7 @@
              size= "30" 
              onChange={saveInputText}
              value={inputText}  //=> controlled input
-             //  onKeyDown => new event prop 
+             //  onKeyDown => new events prop for both enter and escape key
              onKeyDown={(event) => {
                (event.key === 'Enter') && sendMessage();
                (event.key === 'Escape') && setInputText('');
