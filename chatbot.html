@@ -52,6 +52,11 @@
              size= "30" 
              onChange={saveInputText}
              value={inputText}  //=> controlled input
+             //  onKeyDown => new event prop 
+             onKeyDown={(event) => {
+               (event.key === 'Enter') && sendMessage();
+              }
+             }
             />
             <button
              onClick={sendMessage}
