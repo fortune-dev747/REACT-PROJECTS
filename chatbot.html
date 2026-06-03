@@ -20,7 +20,8 @@
           setInputText(event.target.value);
         }
 
-        function sendMessage() {
+        // added async / await features to handle the asynchronous response from the chatbot
+        async function sendMessage() {
           const newChatMessages = [
             ...chatMessages,
             {
@@ -32,7 +33,7 @@
 
           setChatMessages(newChatMessages);
 
-          const response = Chatbot.getResponse(inputText);
+          const response = await Chatbot.getResponseAsync(inputText);
           setChatMessages([
             ...newChatMessages,
             {
