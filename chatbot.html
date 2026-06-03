@@ -55,6 +55,7 @@
              //  onKeyDown => new event prop 
              onKeyDown={(event) => {
                (event.key === 'Enter') && sendMessage();
+               (event.key === 'Escape') && setInputText('');
               }
              }
             />
