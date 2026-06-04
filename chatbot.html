@@ -66,6 +66,10 @@
         overflow: scroll;
         scrollbar-width: none;
       }
+      .app-welcome-message {
+        text-align: center;
+        margin-top: 50px;
+      }
     </style>
   </head>
   <body>
@@ -232,23 +236,7 @@
       }
 
       function App() {
-        const [chatMessages, setChatMessages] = React.useState([{
-          message: 'hello chatbot',
-          sender: 'user',
-          id: 'id1'
-        }, {
-          message: 'Hello! How can I help you?',
-          sender: 'robot',
-          id: 'id2'
-        }, {
-          message: 'what is the date',
-          sender: 'user',
-          id: 'id3'
-        }, {
-          message: 'Today is May 30',
-          sender: 'robot',
-          id: 'id4'
-        }]);
+        const [chatMessages, setChatMessages] = React.useState([]);
        //const [chatMessages, setChatMessages] = array;
        /*shortcut(we used array destructuring above instead of this two lines of code) =>const chatMessages = array[0];
        const setChatMessages = array[1];
@@ -256,6 +244,11 @@
 
         return (
           <div className="app-container">
+            {chatMessages.length === 0 && (
+              <div className="app-welcome-message">
+                Welcome to the Chatbot Project! Send a message using the textbox below
+              </div>
+            )}
             <ChatMessages 
              chatMessages={chatMessages}
             />
