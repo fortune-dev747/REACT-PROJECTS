@@ -13,6 +13,12 @@
         font-size: 15px;
         cursor: pointer;
       }
+      .chat-input {
+        padding: 12px 15px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+      }
     </style>
   </head>
   <body>
@@ -101,6 +107,7 @@
              value={inputText}  //=> controlled input
              //  onKeyDown => new events prop for both enter and escape key
              onKeyDown={handleKeyDown}
+             className="chat-input"
             />
             <button
              onClick={sendMessage}
