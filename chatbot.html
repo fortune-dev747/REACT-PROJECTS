@@ -70,6 +70,10 @@
         text-align: center;
         margin-top: 50px;
       }
+      .loading-spinner {
+        height: 40px;
+        margin: -15px;
+      }
     </style>
   </head>
   <body>
@@ -119,7 +123,7 @@
             // Because we don't save this message in newChatMessages,
             // it will be remove later, when we add the response.
             {
-              message: 'Loading...',
+              message: <img className="loading-spinner" src="loading-spinner.gif" />,
               sender: 'robot',
               id: crypto.randomUUID()
             }
@@ -245,7 +249,8 @@
         return (
           <div className="app-container">
             {chatMessages.length === 0 && (
-              <div className="app-welcome-message">
+              <div 
+               className="app-welcome-message">
                 Welcome to the Chatbot Project! Send a message using the textbox below 
               </div>
             )}
