@@ -216,7 +216,8 @@
           }
         }, [chatMessages]);
         return (
-          <div className="chat-messages-container" ref={chatMessagesRef}>
+          <div className="chat-messages-container" 
+           ref={chatMessagesRef}>
             {chatMessages.map((chatMessage) => {
               return (
                 <ChatMessage 
