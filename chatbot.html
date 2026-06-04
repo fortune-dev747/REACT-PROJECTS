@@ -5,6 +5,7 @@
     <style>
       body {
         font-family: Arial, sans-serif;
+        margin: 0;
       }
       .send-button {
         background-color: rgb(25, 135, 84); 
@@ -31,6 +32,10 @@
       .app-container {
         max-width: 600px;
         margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
       }
       .chat-message-user {
         display: flex;
@@ -54,7 +59,9 @@
       .chat-message-profile {
         width: 45px;
       }
-
+      .chat-messages-container {
+        flex-grow: 1;
+      }
     </style>
   </head>
   <body>
@@ -198,7 +205,7 @@
       function ChatMessages({ chatMessages }) {
 
         return (
-          <>
+          <div className="chat-messages-container">
             {chatMessages.map((chatMessage) => {
               return (
                 <ChatMessage 
@@ -208,7 +215,7 @@
                 />
               );
             })}
-          </>
+          </div>
         );
       }
 
@@ -237,12 +244,12 @@
 
         return (
           <div className="app-container">
+            <ChatMessages 
+             chatMessages={chatMessages}
+            />
             <ChatInput 
              chatMessages={chatMessages}
              setChatMessages={setChatMessages}
-            />
-            <ChatMessages 
-             chatMessages={chatMessages}
             />
           </div>
         );
