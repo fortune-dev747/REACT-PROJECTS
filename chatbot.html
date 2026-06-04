@@ -24,6 +24,11 @@
       .chat-input-container {
         display: flex;
       }
+
+      .app-container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
     </style>
   </head>
   <body>
@@ -195,7 +200,7 @@
        */
 
         return (
-          <>
+          <div className="app-container">
             <ChatInput 
              chatMessages={chatMessages}
              setChatMessages={setChatMessages}
@@ -203,7 +208,7 @@
             <ChatMessages 
              chatMessages={chatMessages}
             />
-          </>
+          </div>
         );
       }
 
