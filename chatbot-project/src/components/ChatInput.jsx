@@ -72,21 +72,30 @@ export function ChatInput({ chatMessages, setChatMessages }) {
         }
     }
 
+    function clearMessages() {
+        setChatMessages([]);
+    }
+    
     return (
         <div className="chat-input-container">
-        <input 
-            placeholder= "Send a message to Chatbot"
-            size= "30" 
-            onChange={saveInputText}
-            value={inputText}  //=> controlled input
-            //  onKeyDown => new events prop for both enter and escape key
-            onKeyDown={handleKeyDown}
-            className="chat-input"
-        />
-        <button
-            onClick={sendMessage}
-            className="send-button"
-        >Send</button>
+            <input 
+                placeholder= "Send a message to Chatbot"
+                size= "30" 
+                onChange={saveInputText}
+                value={inputText}  //=> controlled input
+                //  onKeyDown => new events prop for both enter and escape key
+                onKeyDown={handleKeyDown}
+                className="chat-input"
+            />
+            <button
+             onClick={sendMessage}
+             className="send-button"
+             >Send
+            </button>
+            <button onClick={clearMessages}
+             className="clear-button"
+             >Clear
+            </button>
         </div>
     );
     }
