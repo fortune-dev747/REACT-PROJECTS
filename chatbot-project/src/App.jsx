@@ -26,13 +26,17 @@ function App() {
   // extra responses once.
   }, []);
 
-  const [chatMessages, setChatMessages] = useState([]);
+  const [chatMessages, setChatMessages] = useState(JSON.parse(localStorage.getItem('messages')) ||[]);
   //const [chatMessages, setChatMessages] = array;
        /*shortcut(we used array destructuring above instead of this two lines of code) =>const chatMessages = array[0];
        const setChatMessages = array[1];
        */
 
-  return (
+    useEffect(() => {
+      localStorage.setItem('messages', JSON.stringify(chatMessages));
+    }, [chatMessages]);
+
+   return (
     <div className="app-container">
         {chatMessages.length === 0 && (
          <div 
