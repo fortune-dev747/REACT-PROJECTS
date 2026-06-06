@@ -1,10 +1,11 @@
+import dayjs from 'dayjs';
 import RobotProfileImage from '../assets/robot.png';
 import UserProfileImage from '../assets/mypicture.jpg';
 import './ChatMessage.css';
 
 
 
-export function ChatMessage({ message, sender }) {
+export function ChatMessage({ message, sender, time }) {
   // const message = props.message;
   // const sender = props.sender;
   // // shortcut
@@ -36,6 +37,11 @@ export function ChatMessage({ message, sender }) {
       )}
       <div className="chat-message-text">
         {message}
+        {time && (
+          <div className='chat-message-time'>
+            {dayjs(time).format('h:mma')}
+          </div>
+        )}
       </div>
       {sender === 'user' && (
         <img src= {UserProfileImage} 

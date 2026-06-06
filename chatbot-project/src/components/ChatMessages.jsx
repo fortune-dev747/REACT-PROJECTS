@@ -18,7 +18,8 @@ function ChatMessages({ chatMessages }) {
         return (
           <ChatMessage 
             message={chatMessage.message}
-            sender={chatMessage.sender} 
+            sender={chatMessage.sender}
+            time={chatMessage.time} 
             key={chatMessage.id}
           />
         );
