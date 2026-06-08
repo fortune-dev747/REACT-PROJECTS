@@ -1,5 +1,5 @@
+import { formatMoney } from '../../utils/money'
 import { CheckoutHeader } from './CheckoutHeader'
-import { formatMoney } from '../utils/money'
 import './CheckoutPage.css'
 
 export function CheckoutPage({ cart }) {
