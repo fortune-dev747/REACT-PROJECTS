@@ -13,9 +13,11 @@ export function OrdersPage({ cart }) {
         const getOrdersData = async () => {
             const response = await axios.get('/api/orders?expand=products');
             setOrders(response.data);
-        }
+        };
+
         getOrdersData();
     }, []);
+    
     return (
         <>
             <link rel="icon" type="image/svg+xml" href="/orders-favicon.png" />
