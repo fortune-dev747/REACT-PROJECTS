@@ -5,6 +5,8 @@ export function CartItemDetails({ cartItem, deliveryOptions }) {
     const selectedDeliveryOption = deliveryOptions.find((deliveryOption) => {
         return deliveryOption.id === cartItem.deliveryOptionId;
     });
+
+    return (
     <div  className="cart-item-container">
         <div className="delivery-date">
             Delivery date: {dayjs(selectedDeliveryOption.estimatedDeliveryTimeMs).format('dddd, MMMM D')}
@@ -37,4 +39,5 @@ export function CartItemDetails({ cartItem, deliveryOptions }) {
             <DeliveryOptions deliveryOptions={deliveryOptions} cartItem={cartItem} />
         </div>
     </div>
+    );
 }
