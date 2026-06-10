@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import { formatMoney } from "../utils/money";
+import { DeliveryOptions } from "../pages/checkout/DeliveryOptions";
 
 export function CartItemDetails({ cartItem, deliveryOptions }) {
     const selectedDeliveryOption = deliveryOptions.find((deliveryOption) => {
