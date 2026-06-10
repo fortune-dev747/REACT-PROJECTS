@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { formatMoney } from "../utils/money";
 import { DeliveryOptions } from "../pages/checkout/DeliveryOptions";
 
-export function CartItemDetails({ cartItem, deliveryOptions }) {
+export function CartItemDetails({ cartItem, deliveryOptions, loadCart }) {
     const selectedDeliveryOption = deliveryOptions.find((deliveryOption) => {
         return deliveryOption.id === cartItem.deliveryOptionId;
     });
@@ -37,7 +37,7 @@ export function CartItemDetails({ cartItem, deliveryOptions }) {
                 </div>
             </div>
 
-            <DeliveryOptions deliveryOptions={deliveryOptions} cartItem={cartItem} />
+            <DeliveryOptions deliveryOptions={deliveryOptions} cartItem={cartItem} loadCart={loadCart} />
         </div>
     </div>
     );
