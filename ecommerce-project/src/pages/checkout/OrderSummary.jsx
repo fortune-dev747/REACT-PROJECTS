@@ -1,5 +1,5 @@
 import { DeliveryOptions } from './DeliveryOptions';
-import { CartItemDetails } from '../../components/CartItemDetails';
+import { CartItemDetails } from './CartItemDetails';
 
 export function OrderSummary({ cart, deliveryOptions, loadCart }) {
     return (

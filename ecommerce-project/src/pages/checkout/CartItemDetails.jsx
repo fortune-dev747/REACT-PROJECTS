@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import axios from "axios";
-import { formatMoney } from "../utils/money";
-import { DeliveryOptions } from "../pages/checkout/DeliveryOptions";
+import { formatMoney } from "../../utils/money";
+import { DeliveryOptions } from "./DeliveryOptions";
 
 export function CartItemDetails({ cartItem, deliveryOptions, loadCart }) {
     const selectedDeliveryOption = deliveryOptions.find((deliveryOption) => {
