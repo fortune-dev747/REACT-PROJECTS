@@ -14,6 +14,7 @@ export function Header({ cart=[] }) {
   };
 
 
+ //   Features to show the number of items in the cart
     let totalQuantity = 0;
 
   cart.forEach((cartItem) => {
