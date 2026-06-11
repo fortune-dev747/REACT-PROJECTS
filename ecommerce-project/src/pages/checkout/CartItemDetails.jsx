@@ -66,8 +66,13 @@ export function CartItemDetails({ cartItem, deliveryOptions, loadCart }) {
                 </div>
                 <div className="product-quantity">
                     <span>
-                        Quantity:{isUpdatingQuantity 
-                        ? <input className="quantity-input" type="text" value={quantity} onChange={inputQuantity} onKeyDown={enterInputQuantity} /> 
+                        Quantity:{isUpdatingQuantity ? 
+                        <input type="text" 
+                            className="quantity-input" 
+                            value={quantity} 
+                            onChange={inputQuantity} 
+                            onKeyDown={enterInputQuantity} 
+                        /> 
                         : <span className="quantity-label">{cartItem.quantity}</span>}  
                     </span>
                     <span className="update-quantity-link link-primary"
