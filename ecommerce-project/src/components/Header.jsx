@@ -1,8 +1,9 @@
-import { NavLink } from 'react-router'
+import { NavLink, useNavigate } from 'react-router'
 import { useState } from 'react'
 import './header.css'
 
 export function Header({ cart=[] }) {
+    const navigate = useNavigate();
     // Features for the search bar on the home page
     const [search, setSearch] = useState('');
     const updateSearchInput = (event) => {
@@ -10,7 +11,8 @@ export function Header({ cart=[] }) {
     };
 
   const searchProducts = () => {
-    console.log(search);
+    // When clicked on search button, navigate to the home page
+   navigate(`/?search=${search}`);
   };
 
 
