@@ -28,7 +28,8 @@ export function CartItemDetails({ cartItem, deliveryOptions, loadCart }) {
     return (
     <div  className="cart-item-container">
         <div className="delivery-date">
-            Delivery date: {dayjs(selectedDeliveryOption.estimatedDeliveryTimeMs).format('dddd, MMMM D')}
+            Delivery date: 
+            {dayjs(selectedDeliveryOption.estimatedDeliveryTimeMs).format('dddd, MMMM D')}
         </div>
 
         <div className="cart-item-details-grid">
@@ -44,7 +45,9 @@ export function CartItemDetails({ cartItem, deliveryOptions, loadCart }) {
                 </div>
                 <div className="product-quantity">
                     <span>
-                        Quantity:{isUpdatingQuantity ? <input className="quantity-input" type="text" /> : <span className="quantity-label">{cartItem.quantity}</span>}  
+                        Quantity:{isUpdatingQuantity 
+                        ? <input className="quantity-input" type="text" /> 
+                        : <span className="quantity-label">{cartItem.quantity}</span>}  
                     </span>
                     <span className="update-quantity-link link-primary"
                      onClick={updateQuantity}>
