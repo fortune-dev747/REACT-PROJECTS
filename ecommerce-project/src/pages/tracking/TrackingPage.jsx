@@ -35,7 +35,7 @@ export function TrackingPage({ cart }) {
     deliveryPercent = 100;
   }
 
-   const isPreparing = deliveryPercent < 33;
+  const isPreparing = deliveryPercent < 33;
   const isShipped = deliveryPercent >= 33 && deliveryPercent < 100;
   const isDelivered = deliveryPercent === 100;
 
