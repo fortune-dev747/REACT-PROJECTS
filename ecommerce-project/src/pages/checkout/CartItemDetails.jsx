@@ -17,8 +17,10 @@ export function CartItemDetails({ cartItem, deliveryOptions, loadCart }) {
     };
 
     const updateQuantity = async () => {
-    // Switch between true and false for isUpdatingQuantity.
+      // Switch between true and false for isUpdatingQuantity.
+
         if (isUpdatingQuantity) {
+            // when we update the value in the textbox then the quantity updates to our inputted value in the textbox.
             await axios.put(`/api/cart-items/${cartItem.productId}`, {
                 quantity: Number(quantity),
             });
