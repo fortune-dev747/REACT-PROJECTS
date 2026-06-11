@@ -6,6 +6,7 @@ import { DeliveryOptions } from "./DeliveryOptions";
 
 export function CartItemDetails({ cartItem, deliveryOptions, loadCart }) {
     const [isUpdatingQuantity, setIsUpdatingQuantity] = useState(false);
+    const [quantity, setQuantity] = useState(cartItem.quantity);
     const selectedDeliveryOption = deliveryOptions.find((deliveryOption) => {
         return deliveryOption.id === cartItem.deliveryOptionId;
     });
@@ -22,6 +23,10 @@ export function CartItemDetails({ cartItem, deliveryOptions, loadCart }) {
         } else {
         setIsUpdatingQuantity(true);
         }
+    };
+
+    const inputQuantity = (event) => {
+        setQuantity(event.target.value);
     };
 
 
@@ -46,7 +51,7 @@ export function CartItemDetails({ cartItem, deliveryOptions, loadCart }) {
                 <div className="product-quantity">
                     <span>
                         Quantity:{isUpdatingQuantity 
-                        ? <input className="quantity-input" type="text" /> 
+                        ? <input className="quantity-input" type="text" value={quantity} onChange={inputQuantity} /> 
                         : <span className="quantity-label">{cartItem.quantity}</span>}  
                     </span>
                     <span className="update-quantity-link link-primary"
