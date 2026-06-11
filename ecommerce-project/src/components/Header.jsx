@@ -1,11 +1,19 @@
 import { NavLink, useNavigate } from 'react-router'
 import { useState } from 'react'
+import { useSearchParams } from 'react-router';
 import './header.css'
 
 export function Header({ cart=[] }) {
     const navigate = useNavigate();
     // Features for the search bar on the home page
-    const [search, setSearch] = useState('');
+    const [searchParams] = useSearchParams();
+
+  // Using "searchText" instead of "search" as a different variable name since "search" is already being used below.
+  const searchText = searchParams.get('search');
+
+  // || '' is a shortcut. It means if searchText does not exist
+  // it will use a default value of ''.
+  const [search, setSearch] = useState(searchText || '');
     const updateSearchInput = (event) => {
       setSearch(event.target.value);
     };
