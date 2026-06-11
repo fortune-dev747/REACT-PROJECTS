@@ -1,13 +1,27 @@
 import { NavLink } from 'react-router'
+import { useState } from 'react'
 import './header.css'
 
 export function Header({ cart=[] }) {
+    // Features for the search bar on the home page
+    const [search, setSearch] = useState('');
+    const updateSearchInput = (event) => {
+      setSearch(event.target.value);
+    };
+
+  const searchProducts = () => {
+    console.log(search);
+  };
+
+
     let totalQuantity = 0;
 
   cart.forEach((cartItem) => {
     totalQuantity += cartItem.quantity;
   });
     
+
+  
 
     return (
         <div className="header">
@@ -21,9 +35,9 @@ export function Header({ cart=[] }) {
             </div>
 
             <div className="middle-section">
-                <input className="search-bar" type="text" placeholder="Search" />
+                <input className="search-bar" type="text" placeholder="Search" onChange={updateSearchInput} />
 
-                <button className="search-button">
+                <button className="search-button" onClick={searchProducts}>
                 <img className="search-icon" src="images/icons/search-icon.png" />
                 </button>
             </div>
