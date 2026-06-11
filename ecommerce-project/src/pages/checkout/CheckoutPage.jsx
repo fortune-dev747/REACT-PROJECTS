@@ -27,6 +27,10 @@ export function CheckoutPage({ cart, loadCart }) {
         // This useEffect will run every time the cart changes.
     }, [cart]);
 
+    // This makes axios available in the Console.
+    window.axios = axios;
+
+
     return (
         <>
             <link rel="icon" type="image/svg+xml" href="/cart-favicon.png" />
