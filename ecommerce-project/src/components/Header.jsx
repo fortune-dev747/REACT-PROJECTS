@@ -24,10 +24,10 @@ export function Header({ cart=[] }) {
   };
 
   const showSearch = (event) => {
-    if (event.key === 'Enter') {
-      searchProducts();
-    }
-  };
+        if (event.key === 'Enter') {
+        searchProducts();
+        }   
+   };
 
 
  //   Features to show the number of items in the cart
@@ -52,7 +52,13 @@ export function Header({ cart=[] }) {
             </div>
 
             <div className="middle-section">
-                <input className="search-bar" type="text" placeholder="Search" onChange={updateSearchInput} onKeyDown={showSearch} />
+                <input 
+                 className="search-bar" 
+                 type="text" 
+                 placeholder="Search" 
+                 onChange={updateSearchInput} 
+                 onKeyDown={showSearch} 
+                />
 
                 <button className="search-button" onClick={searchProducts}>
                 <img className="search-icon" src="images/icons/search-icon.png" />
