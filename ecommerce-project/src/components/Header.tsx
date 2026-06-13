@@ -3,7 +3,16 @@ import { useState } from 'react'
 import { useSearchParams } from 'react-router';
 import './header.css'
 
-export function Header({ cart=[] }) {
+
+type HeaderProps = {
+  cart: {
+    productId: string,
+    quantity: number,
+    deliveryOptionId: string;
+  }[]
+}
+
+export function Header({ cart=[] }: HeaderProps) {
     const navigate = useNavigate();
     // Features for the search bar on the home page
     const [searchParams] = useSearchParams();
@@ -14,7 +23,7 @@ export function Header({ cart=[] }) {
   // || '' is a shortcut. It means if searchText does not exist
   // it will use a default value of ''.
   const [search, setSearch] = useState(searchText || '');
-    const updateSearchInput = (event) => {
+    const updateSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
       setSearch(event.target.value);
     };
 
@@ -23,7 +32,7 @@ export function Header({ cart=[] }) {
    navigate(`/?search=${search}`);
   };
 
-  const showSearch = (event) => {
+  const showSearch = (event: React.KeyboardEvent) => {
         if (event.key === 'Enter') {
         searchProducts();
         }   
